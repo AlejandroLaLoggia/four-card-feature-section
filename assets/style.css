@@ -1,0 +1,151 @@
+:root{
+    /*COLORS*/
+
+    /*Primary*/
+
+--Red: hsl(0, 78%, 62%);
+--Cyan: hsl(180, 62%, 55%);
+--Orange: hsl(34, 97%, 64%);
+--Blue: hsl(212, 86%, 64%);
+--black: #000;
+
+   /*Neutral*/
+
+--Very_Dark_Blue: hsl(234, 12%, 34%);
+--Grayish_Blue: hsl(229, 6%, 66%);
+--Very_Light_Gray: hsl(0, 0%, 98%);
+
+    /*FONT*/
+
+--ff_body:'Poppins', sans-serif;
+--fs_cards:13px;
+--fs_body:15px;
+--fs_title_mobile:24px;
+--fs_title_desktop:36px;
+--fs_title_card:20px;
+--fw_light:200;
+--fw_regular:400;
+--fw_bold:600;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  /*1 rem = 10 px*/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--Very_Light_Gray);
+    color: var(--Grayish_Blue);
+    font-family: var(--ff_body);
+    font-size: var(--fs_body);
+    position: relative;
+}
+
+.header{
+    width: 82vw;
+    max-width: 51rem;
+    margin-top: 8rem;
+    margin-bottom: 8.4rem;
+    text-align: center;
+}
+
+.header_h1{
+    font-size: var(--fs_title_mobile);
+    font-weight: var(--fw_regular);
+}
+
+.font_black{
+    color: var(--black);
+    font-weight: var(--fw_bold);
+}
+
+.header_p{
+    margin-top: 2rem;
+    line-height: 24px;
+}
+
+.card{
+    width: 82vw;
+    height: 58vw;
+    max-width: 350px;
+    max-height: 250px;
+    position: relative;
+    margin-bottom: 2.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.1);
+    padding: 3rem;
+    background-color: white;
+}
+
+.super{
+    border-top: 5px solid var(--Cyan);
+}
+.team{
+    border-top: 5px solid var(--Red);
+}
+.karma{
+    border-top: 5px solid var(--Orange);
+}
+.calc{
+    border-top: 5px solid var(--Blue);
+}
+
+.card_p{
+    font-size: var(--fs_cards);
+}
+
+.card_icon{
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    width: 15vw;
+    max-width: 64px;
+}
+
+.footer{
+   margin-top: 3rem;
+}
+
+@media (min-width:720px){
+
+    .header_h1{
+        font-size: var(--fs_title_desktop);
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 30px;
+        
+    }
+    
+    .card:hover{
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+    
+    .super{
+        grid-area: 2 / 1 / 4 / 2;
+    }
+    .team{
+        grid-area: 1 / 2 / 3 / 3;
+    }
+    .karma{
+        grid-area: 3 / 2 / 5 / 3;
+    }
+    .calc{
+        grid-area: 2 / 3 / 4 / 4;
+    }
+}
